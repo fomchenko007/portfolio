@@ -23,45 +23,15 @@ export class ThemeSwitcherComponent implements OnInit {
 		this.idb.connectToIDB();
 		this.prefersDarkSchemeFromIdb = (await this.idb.getData("Material You", "preferredColorScheme"));
 
-		if (this.prefersDarkSchemeFromIdb) {
-			this.themeMode = this.prefersDarkSchemeFromIdb;
-			this.setThemeMode(this.themeMode);
-		} else if (this.isDarkMode && !this.prefersDarkSchemeFromIdb) {
+	
 			this.setThemeMode("dark");
-		} else {
-			this.setThemeMode("light");
-		}
+
+		
 	}
 
-	toggleThemeMode() {
-		if (this.themeMode === "light") {
-			this.setThemeMode("dark");
-		} else {
-			this.setThemeMode("light");
-		}
+	Login() {
+		alert("redirecting to login")
 	}
 
-	setThemeMode(mode: "light" | "dark") {
-		switch (mode) {
-			case "light":
-				document.body.classList.toggle("dark-theme", false);
-				document.body.classList.toggle("light-theme", true);
-				this.themeMode = "light";
-				break;
-			case "dark":
-				document.body.classList.toggle("dark-theme", true);
-				document.body.classList.toggle("light-theme", false);
-				this.themeMode = "dark";
-				break;
-			default:
-				console.error("Invalid theme");
-		}
-
-		this.accent.setThemeMode(this.themeMode);
-
-		this.idb.writeToTheme("Material You", {
-			preferredColorScheme: this.themeMode,
-		});
-	}
 
 }

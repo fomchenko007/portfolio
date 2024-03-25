@@ -1,10 +1,10 @@
-<button (click)="toggleThemeMode()" class="theme-switcher">
+<button (click)="Login()" class="theme-switcher">
 	<span class="material-symbols-rounded theme-swticher__toggle-icon">
 		<ng-container *ngIf="themeMode === 'light'; else lightMode">
 			dark_mode
 		</ng-container>
 		<ng-template #lightMode>
-			light_mode
+			login
 		</ng-template>
 	</span>
 	Login

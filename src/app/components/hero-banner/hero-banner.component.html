@@ -1,8 +1,7 @@
 <article class="hero-banner" id="hero-banner">
 	<section class="hero-banner__text-container">
-		<h1 class="hero-banner__header">{{ siteTitle }}</h1>
+		<h1 class="hero-banner__header">We know this</h1>
 		<p class="hero-banner__subheader"></p>
-		<accent-switcher></accent-switcher>
 
 		<section class="hero-banner__external-icons">
 			<ng-container
@@ -15,7 +14,7 @@
 
 	<img
 		*ngIf="customImage"
-		[src]="this.customImage"
+		[src]="https://portfolio.dartegnian.com/assets/img/tertiary-min-512.avif"
 		class="hero-banner__img hero-banner__cover--custom-image"
 		[class.hero-banner__img--custom-image-disabled]="activeIndex !== 0"
 		alt="Custom image for material theming"
